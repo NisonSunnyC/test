@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Shop</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="txt_discounts_for_you">Discounts for you</string>
+    <string name="txt_view_all">View All</string>
+    <string name="txt_tittle_home">Home</string>
+</resources>

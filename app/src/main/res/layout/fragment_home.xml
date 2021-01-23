@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context=".ui.homeFragment">
+
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/layout_action_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            >
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+            <LinearLayout
+                android:id="@+id/dotsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/viewPager" />
+
+            <TextView
+                android:id="@+id/tv_discounts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_discounts_for_you"
+               android:layout_margin="20dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@+id/dotsContainer"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/vertical_recyclerview"
+                />
+         <Button
+             android:id="@+id/btn_view_all"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/txt_view_all"
+             android:background="@drawable/blue_button_style"
+             android:textColor="#fff"
+             android:padding="5dp"
+             app:layout_constraintRight_toRightOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/dotsContainer"
+             app:layout_constraintBottom_toTopOf="@+id/vertical_recyclerview"
+             android:layout_margin="20dp"
+
+
+
+             />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/vertical_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="#FFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_discounts" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
