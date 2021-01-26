@@ -33,16 +33,13 @@ import java.util.Timer;
 public class homeFragment extends Fragment {
 
     private View rootView;
-    private AppBarLayout searchBar;
-    private ImageView ivSearch;
-    private ImageView ivBack;
+    private AppBarLayout actionBar;
+
     private ViewPager viewPager;
     private ImageSlidingAdapter imageSlidingAdapter;
     private NestedScrollView nestedScrollView;
     private int current_pos = 0;
     private int current_dots_pos = 0;
-    int[] images = null;
-    Timer timer;
     private LinearLayout dotsContainer;
     private ProductsRecycleAdapter recyclerViewDataAdapter;
     RecyclerView recyclerView;
@@ -74,7 +71,7 @@ public class homeFragment extends Fragment {
     }
 
     private void init() {
-        searchBar = rootView.findViewById(R.id.action_bar_layout);
+        actionBar = rootView.findViewById(R.id.action_bar_layout);
         viewPager = rootView.findViewById(R.id.viewPager);
         dotsContainer = rootView.findViewById(R.id.dotsContainer);
         imageSlidingAdapter = new ImageSlidingAdapter(getActivity());
@@ -82,7 +79,6 @@ public class homeFragment extends Fragment {
         nestedScrollView = (NestedScrollView) rootView.findViewById(R.id.nested_scrollview);
         nestedScrollView.setFillViewport(true);
         recyclerView = rootView.findViewById(R.id.vertical_recyclerview);
-//        createSlideShow();
         prepareDots(current_dots_pos);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
