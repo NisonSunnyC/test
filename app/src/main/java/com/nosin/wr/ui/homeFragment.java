@@ -74,10 +74,8 @@ public class homeFragment extends Fragment {
     }
 
     private void init() {
-        searchBar = rootView.findViewById(R.id.search_bar_layout);
-        ivBack = rootView.findViewById(R.id.iv_back);
+        searchBar = rootView.findViewById(R.id.action_bar_layout);
         viewPager = rootView.findViewById(R.id.viewPager);
-        images = new int[]{R.drawable.abcd, R.drawable.home, R.drawable.cdef, R.drawable.drop};
         dotsContainer = rootView.findViewById(R.id.dotsContainer);
         imageSlidingAdapter = new ImageSlidingAdapter(getActivity());
         viewPager.setAdapter(imageSlidingAdapter);
